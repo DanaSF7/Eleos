@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Tracking: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("tracking is here")
     }
 }
 

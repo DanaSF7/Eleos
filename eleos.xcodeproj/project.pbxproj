@@ -14,7 +14,8 @@
 		EC87D50F2A7EC36200207232 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D50E2A7EC36200207232 /* Tracking.swift */; };
 		EC87D5112A7EC36900207232 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D5102A7EC36900207232 /* Plants.swift */; };
 		EC87D5132A7EC37400207232 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D5122A7EC37400207232 /* Schedule.swift */; };
-		EC87D5152A7ECB1800207232 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D5142A7ECB1800207232 /* settings.swift */; };
+		EC87D5172A7FC84400207232 /* accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D5162A7FC84400207232 /* accounts.swift */; };
+		EC87D5192A7FDF2300207232 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC87D5182A7FDF2300207232 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		EC87D50E2A7EC36200207232 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
 		EC87D5102A7EC36900207232 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 		EC87D5122A7EC37400207232 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
-		EC87D5142A7ECB1800207232 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
+		EC87D5162A7FC84400207232 /* accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accounts.swift; sourceTree = "<group>"; };
+		EC87D5182A7FDF2300207232 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,8 @@
 			children = (
 				EC87D4F82A7EC2E500207232 /* eleosApp.swift */,
 				EC87D4FA2A7EC2E500207232 /* ContentView.swift */,
-				EC87D5142A7ECB1800207232 /* settings.swift */,
+				EC87D5182A7FDF2300207232 /* Home.swift */,
+				EC87D5162A7FC84400207232 /* accounts.swift */,
 				EC87D4FC2A7EC2E800207232 /* Assets.xcassets */,
 				EC87D4FE2A7EC2E800207232 /* Preview Content */,
 			);
@@ -150,10 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC87D50F2A7EC36200207232 /* Tracking.swift in Sources */,
+				EC87D5172A7FC84400207232 /* accounts.swift in Sources */,
 				EC87D5112A7EC36900207232 /* Plants.swift in Sources */,
-				EC87D5152A7ECB1800207232 /* settings.swift in Sources */,
 				EC87D4FB2A7EC2E500207232 /* ContentView.swift in Sources */,
 				EC87D5132A7EC37400207232 /* Schedule.swift in Sources */,
+				EC87D5192A7FDF2300207232 /* Home.swift in Sources */,
 				EC87D4F92A7EC2E500207232 /* eleosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
