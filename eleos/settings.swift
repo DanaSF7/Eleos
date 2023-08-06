@@ -12,31 +12,45 @@
 import SwiftUI
 
 struct settings: View {
- @State var buttonSheet = false
-var body: some View {
-        VStack{
-
-            Button("gearshape") {
+    @State var buttonSheet = false
+    var body: some View {
+        ZStack{
+            Button {
                 buttonSheet.toggle()
-              }
-            .buttonStyle(.borderless)
+            } label: {
+                Image(systemName: "gearshape")
+                    .font(.body.bold())
+                    .foregroundColor(.black)
+                    .padding(9)
+                    .frame(maxWidth: . infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding(20)
+                
+                    .sheet(isPresented: $buttonSheet) {
+                        BottomSheetView()
+                            .presentationDetents([.height(700)])
+                    }
+                
             }
-        .padding()
-        .sheet(isPresented: $buttonSheet) {
-            BottomSheetView()
-            .presentationDetents([.height(700)])
+            
+            //            Button("gearshape") {
+            //                buttonSheet.toggle()
+            //              }
+            //            .buttonStyle(.borderless)
+            //            }
+            //        .padding()
+            
         }
     }
-}
-struct BottomSheetView: View {
+    struct BottomSheetView: View {
         var body: some View {
             Text("setings")
-//            we can add sitting stuff here later
+            //            we can add sitting stuff here later
+        }
     }
-}
-
-struct settings_Previews: PreviewProvider {
-    static var previews: some View {
-        settings()
+    
+    struct settings_Previews: PreviewProvider {
+        static var previews: some View {
+            settings()
+        }
     }
 }

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        TabView{
+        TabView {
            Tracking()
             .tabItem {
                 Image(systemName: "list.bullet.below.rectangle")
