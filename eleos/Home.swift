@@ -10,18 +10,18 @@ import SwiftUI
 struct Home: View {
     @State var buttonSheet = false
     @State var AccountSheet = false
-
+    
     
     var body: some View {
         ZStack{
             Button {
-           buttonSheet.toggle()
+                buttonSheet.toggle()
             } label: {
-            Image(systemName: "gearshape")
-               .font(.body.bold())
-               .foregroundColor(.black)
-               .padding(15)
-                .frame(maxWidth: . infinity, maxHeight: .infinity, alignment: .topTrailing)
+                Image(systemName: "gearshape")
+                    .font(.body.bold())
+                    .foregroundColor(.black)
+                    .padding(15)
+                    .frame(maxWidth: . infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .padding(20)
                 
                     .sheet(isPresented: $buttonSheet) {
@@ -52,41 +52,51 @@ struct Home: View {
     }
     
     struct BottomSheetView: View {
+        @State private var wakeUp = Date.now
+
+        
         var body: some View {
             NavigationView {
                 ZStack {
                     VStack {
-                    Text("Settings")
-                        .bold()
-                        .padding(15)
-                        .accentColor(.black)
-                        .dynamicTypeSize(.xLarge)
-                    
-                    Form {
-                    
+                        Text("Settings")
+                            .bold()
+                            .padding(15)
+                            .accentColor(.black)
+                            .dynamicTypeSize(.xLarge)
                         
-                        Section("General") {
-                            NavigationLink(destination: NotificationView(), label: {
-                                Text("Notification")
+                        Form {
+                            
+                            
+                            Section("General") {
+                                NavigationLink(destination: NotificationView(), label: {
+                                    Text("Notification")
+                                    
+                                    
+                                })
                                 
-                              
-                            })
-                            Text("apperance")
-//                            make a navigation like here and create a view for it
-
-                        }
+                                NavigationLink(destination: ApperanceView(), label: {
+                                    Text("Apperance")
+                                })
+                                
+                                
+                                
+                                
+                            }
+                            
+                          
                         }
                         
                     }
                 }
                 
             }
-            }
-
         }
+        
+    }
     struct NotificationView: View {
         @State private var isToggled = false
-
+        
         var body: some View {
             Form {
                 
@@ -97,16 +107,18 @@ struct Home: View {
                         .font(.system(size: 12, weight: .light, design: .default))
                 }
             }
-
-                }
-                
-            }
-
-
-
-            }
-
+            
+        }
         
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     
     
     
@@ -123,20 +135,38 @@ struct Home: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 60)
-//                    .scale(1.0)
-//                    .size(width: 40, height: 40)
-                    Text("okay")
-//
+                //                    .scale(1.0)
+                //                    .size(width: 40, height: 40)
+                Text("okay")
+                //
                 
             }
-                          
+            
         }
     }
-    
+    struct ApperanceView: View {
+                @State private var FontSize = 0
+                @State private var iconSize = 0.0
+
+
+                var body: some View {
+                    Form {
+                        
+                        Stepper(value: $FontSize, in: 0...10) {
+                                            Text("Font size: \(FontSize)")
+                                        }
+                        Text("the current icon size is ^[\(Int(iconSize)) icons avilable](inflect: true)")
+                                        Slider(value: $iconSize, in: 0...10)
+                        
+                    }
+                    
+                }
+                
+            }
     
     struct Home_Previews: PreviewProvider {
         static var previews: some View {
             Home()
         }
     }
-
+}
