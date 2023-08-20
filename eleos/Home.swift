@@ -18,12 +18,14 @@ struct Home: View {
                 buttonSheet.toggle()
             } label: {
                 Image(systemName: "gearshape")
+                    .font(.title)
                     .font(.body.bold())
                     .foregroundColor(.black)
-                    .padding(15)
+                    .padding(20)
                     .frame(maxWidth: . infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .padding(20)
-                
+                    .offset(x: 10)
+
                     .sheet(isPresented: $buttonSheet) {
                         BottomSheetView()
                             .presentationDetents([.height(730)])
@@ -35,12 +37,13 @@ struct Home: View {
                 AccountSheet.toggle()
             } label: {
                 Image(systemName: "person.crop.circle")
+                    .font(.title)
                     .font(.body.bold())
                     .foregroundColor(.black)
                     .padding(20)
                     .frame(width: 280, height: 730, alignment: .topTrailing)
-                    .padding(15)
-                
+                    .padding(20)
+                    .offset(x:-10)
                     .sheet(isPresented: $AccountSheet) {
                         AccountSheetView()
                             .presentationDetents([.height(730)])
