@@ -25,7 +25,7 @@ struct Home: View {
                     .frame(maxWidth: . infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .padding(20)
                     .offset(x: 10)
-
+                
                     .sheet(isPresented: $buttonSheet) {
                         BottomSheetView()
                             .presentationDetents([.height(730)])
@@ -56,7 +56,7 @@ struct Home: View {
     
     struct BottomSheetView: View {
         @State private var wakeUp = Date.now
-
+        
         
         var body: some View {
             NavigationView {
@@ -82,12 +82,25 @@ struct Home: View {
                                     Text("Apperance")
                                 })
                                 
+                                NavigationLink(destination: PrivacyView(), label: {
+                                    Text("Privacy policy")
+                                })
+                                
+                                NavigationLink(destination: SupportView(), label: {
+                                    Text("Support")
+                                })
+                                
+                                
+                                
+                                
+                                
+                                
                                 
                                 
                                 
                             }
                             
-                          
+                            
                         }
                         
                     }
@@ -148,28 +161,54 @@ struct Home: View {
         }
     }
     struct ApperanceView: View {
-                @State private var FontSize = 0
-                @State private var iconSize = 0.0
-
-
-                var body: some View {
-                    Form {
-                        
-                        Stepper(value: $FontSize, in: 0...10) {
-                                            Text("Font size: \(FontSize)")
-                                        }
-                        Text("the current icon size is ^[\(Int(iconSize)) icons avilable](inflect: true)")
-                                        Slider(value: $iconSize, in: 0...10)
-                        
-                    }
-                    
+        @State private var FontSize = 0
+        @State private var iconSize = 0.0
+        
+        
+        var body: some View {
+            Form {
+                
+                Stepper(value: $FontSize, in: 0...10) {
+                    Text("Font size: \(FontSize)")
                 }
+                Text("the current icon size is ^[\(Int(iconSize)) icons avilable](inflect: true)")
+                Slider(value: $iconSize, in: 0...10)
                 
             }
+            
+        }
+        
+    }
     
-    struct Home_Previews: PreviewProvider {
-        static var previews: some View {
-            Home()
+    struct PrivacyView: View {
+        
+        var body: some View {
+            Form{
+                Text("All user information is private.")
+            }
+        }
+    }
+    
+    struct SupportView: View {
+        var body: some View {
+            Form {
+                Section("Help Center") {
+                    NavigationLink(destination: SupportView(), label: {
+                        Text("About eleos")
+                    })        }
+            }
+            
+            
+            
+            
         }
     }
 }
+
+
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
+}
+
