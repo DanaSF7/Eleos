@@ -90,6 +90,13 @@ struct Home: View {
                                     Text("Support")
                                 })
                                 
+                                NavigationLink(destination: HelpView(), label: {
+                                    Text("questions")
+                                })
+                                NavigationLink(destination: HelpView(), label: {
+                                    Text("plants")
+                                })
+                              
                                 
                                 
                                 
@@ -194,21 +201,41 @@ struct Home: View {
             Form {
                 Section("Help Center") {
                     NavigationLink(destination: SupportView(), label: {
-                        Text("About eleos")
+                        Text("About Eloes")
+                        
+                        
+                        
                     })        }
             }
-            
-            
-            
-            
+               
+                }
+            }
+        }
+
+struct HelpView: View {
+    var body: some View {
+        Form {
+            Section("About eleos") {
+                NavigationLink(destination: HelpView(), label: {
+                    Text("questions")
+                    
+                    
+                    
+                })        }
+        }
+           
+            }
+        }
+    
+
+    
+    
+    
+    
+    struct Home_Previews: PreviewProvider {
+        static var previews: some View {
+            Home()
         }
     }
-}
-
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
+    
 

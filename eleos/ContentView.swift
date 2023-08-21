@@ -16,10 +16,10 @@ struct ContentView: View {
                         Text("Home")
                     }
             
-                Tracking()
+                ToDoList()
                     .tabItem {
                         Image(systemName: "list.bullet.below.rectangle")
-                        Text("Tracking")
+                        Text("To Do List")
                     }
                 Plants()
                     .tabItem {
